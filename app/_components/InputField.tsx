@@ -4,6 +4,7 @@ type InputFieldProps = {
   type: string;
   placeholder: string;
   value: string;
+  name: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
@@ -12,6 +13,7 @@ const InputField = ({
   placeholder,
   value,
   onChange,
+  name,
 }: InputFieldProps) => {
   return (
     <div>
@@ -19,8 +21,9 @@ const InputField = ({
         type={type}
         placeholder={placeholder}
         value={value}
+        name={name}
         onChange={onChange}
-        className="outline-none bg-gray-800 text-gray-200 border border-gray-700 rounded-md px-4 py-2 inline-block w-full h-full"
+        className="outline-none bg-gray-800 text-gray-200 rounded-md px-4 py-2 inline-block w-full h-full"
       />
     </div>
   );

@@ -80,9 +80,13 @@ const GithubExplorer = () => {
         <Authentication />
       ) : (
         <>
-          <h1 className="text-3xl font-bold text-center  flex items-center justify-center gap-2 mb-6">
+          <h1 className="text-3xl font-bold text-center  flex items-center justify-center gap-2 mb-3">
             Mini Github Explorer
           </h1>
+          <p className="text-gray-400 text-center mb-6 max-w-sm mx-auto">
+            Search for a GitHub username to explore user details and public
+            repositories instantly
+          </p>
           <form
             className="flex flex-col gap-4 mb-10 sm:flex-row"
             onSubmit={handleGithubSearch}

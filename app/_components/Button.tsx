@@ -23,7 +23,7 @@ const Button = ({
       className={`w-full h-full px-4 py-2 font-semibold rounded-md flex items-center justify-center gap-2 transition-colors duration-150 enabled:cursor-pointer ${
         variant === "secondary"
           ? "bg-transparent border-2 border-gray-700 hover:bg-gray-800/50"
-          : "disabled:bg-gray-700 disabled:text-gray-300 enabled:bg-gray-100 enabled:text-gray-900 hover:enabled:bg-gray-200"
+          : "disabled:bg-gray-700 disabled:text-gray-300 enabled:bg-gray-200 enabled:text-gray-900 hover:enabled:bg-gray-200"
       }`}
     >
       {children}

@@ -10,7 +10,18 @@ const nunito = Nunito({
 
 export const metadata: Metadata = {
   title: "Mini Github Explorer",
-  description: "Explore your favorite Github users and their repositories",
+  description:
+    "A modern, responsive web application built with Next.js that allows users to explore GitHub profiles and repositories. Search for any GitHub username to view their profile information, statistics, and latest repositories in a beautiful, dark-themed interface.",
+  keywords: ["github", "explorer", "user", "profile", "repository", "stats"],
+  authors: [{ name: "Babatunde Adeniyi", url: "https://babatundeadeniyi.com" }],
+  icons: {
+    icon: "/favicon.ico",
+  },
+  manifest: "/manifest.json",
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

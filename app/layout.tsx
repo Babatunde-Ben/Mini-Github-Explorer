@@ -9,7 +9,7 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: "Mini Github Explorer",
+  title: "Mini Github Explorer | Babatunde Adeniyi",
   description:
     "A modern, responsive web application built with Next.js that allows users to explore GitHub profiles and repositories. Search for any GitHub username to view their profile information, statistics, and latest repositories in a beautiful, dark-themed interface.",
   keywords: ["github", "explorer", "user", "profile", "repository", "stats"],

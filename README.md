@@ -27,7 +27,7 @@ A modern, responsive web application built with Next.js that allows users to exp
 Before running this project, make sure you have:
 
 - [Node.js](https://nodejs.org/) (version 18.17 or later)
-- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+- [npm](https://www.npmjs.com/)
 - A GitHub account (for testing the search functionality)
 
 ## 🛠️ Installation
@@ -43,8 +43,6 @@ Before running this project, make sure you have:
 
    ```bash
    npm install
-   # or
-   yarn install
    ```
 
 3. **Set up environment variables**

@@ -10,23 +10,35 @@ import CalendarIcon from "@/app/_assets/svg/calendar.svg";
 import ForkIcon from "@/app/_assets/svg/fork.svg";
 import StarIcon from "@/app/_assets/svg/star.svg";
 import LoaderIcon from "@/app/_assets/svg/loader.svg";
+import SearchCrossIcon from "@/app/_assets/svg/search-cross.svg";
 
 export default function Home() {
   const [searchText, setSearchText] = useState("");
   const [githubUser, setGithubUser] = useState<TGithubUser | null>(null);
   const [repositories, setRepositories] = useState<TGithubRepo[]>([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   // fetch github user by username
   const fetchGithubUser = async (username: string) => {
     setLoading(true);
+    setError(null);
+    setGithubUser(null);
+    setRepositories([]);
+
     try {
       const response = await fetch(`https://api.github.com/users/${username}`);
       const result = await response.json();
-      if (result.message === "Not Found") {
-        setGithubUser(null);
+
+      if (result.message) {
+        setError(`"${username}" not found on GitHub`);
         return;
       }
+
+      // if (result.message) {
+      //   setError("An error occurred while fetching user data");
+      //   return;
+      // }
 
       console.log("github user", result);
       setGithubUser(result);
@@ -38,6 +50,7 @@ export default function Home() {
       }
     } catch (error) {
       console.error("Error fetching user:", error);
+      setError("Failed to connect to GitHub. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -102,6 +115,23 @@ export default function Home() {
             </Button>
           </div>
         </form>
+
+        {error && (
+          <div className="text-center py-12">
+            <div className="bg-gray-800/50 border border-gray-700/50 rounded-lg p-8 max-w-md mx-auto">
+              <div className="text-gray-400 mb-4">
+                <SearchCrossIcon className="w-16 h-16 mx-auto mb-4" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-200 mb-2">
+                User Not Found
+              </h3>
+              <p className="text-gray-400 text-sm mb-4">{error}</p>
+              {/* <p className="text-gray-500 text-xs">
+                Please check the username and try again.
+              </p> */}
+            </div>
+          </div>
+        )}
 
         {githubUser && (
           <>

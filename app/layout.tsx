@@ -8,8 +8,8 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: "Github Explorer",
-  description: "Explore Github users and their repositories",
+  title: "Mini Github Explorer",
+  description: "Explore your favorite Github users and their repositories",
 };
 
 export default function RootLayout({
